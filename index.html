@@ -73,8 +73,8 @@
     // devGreet(false, false) // should return "Hey, I am a backend dev and I am sad"
     // ❗ Notes
     // 🧠 Use ternary expressions to construct the string.
-    const devGreet = () => {
-
+    const devGreet = (isFrontend, isHappy) => {
+      return `Hey, I am a ${isFrontend ? 'frontend' : 'backend'} dev and I am ${isHappy ? 'happy' : 'sad'}`
     }
 
     // 👉 CHALLENGE 4
@@ -86,9 +86,16 @@
     // recognize({}) // should return "Hidden Person Rocks!"
     // ❗ Notes
     // 🧠 Try using destructuring to grab the name, and a return followed by a ternary expression.
-    const recognize = () => {
-
+    const recognize = (user) => {
+      // if (!user.hasOwnProperty ('name')) {
+      //   return 'Hidden Person Rocks!'
+      // }
+      // if(user.hasOwnProperty('name')){
+      //   return `${user.name} Rules!`
+      // }
+      return user.hasOwnProperty('name') ? `${user.name} Rules!` : 'Hidden Person Rocks!'
     }
+    
 
     // 👉 CHALLENGE 5
     // 🧠 The function processBooleans takes an array of Booleans represented using integers (1/0 instead of true/false)
@@ -97,9 +104,7 @@
     // processBooleans([1, 0, 0, 1, 0]) // should return ["Y", "N", "N", "Y", "N"]
     // ❗ Notes
     // 🧠 Using map, arrow function syntax, and the ternary, you can make this function a short one-liner
-    const processBooleans = () => {
-
-    }
+    const processBooleans = (Booleans) => Booleans.map(interger => interger ? 'Y' : 'N')
 
     // 👉 CHALLENGE 6
     // 🧠 The function reverseString takes a string as its argument, and returns it reversed.
